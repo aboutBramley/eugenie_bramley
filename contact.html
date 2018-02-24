@@ -1,0 +1,173 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+
+	<title>About-Contact</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <link rel="STYLESHEET" type="text/css" href="contact.css" />
+    <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+.lefttop {
+  background-color:#341C09;
+  padding:20px;
+  float:left;
+  width:30%;/*The width is 30%, by default*/
+  color: #D4E4F7;
+}
+
+.righttop {
+  background-color:#D4E4F7;
+  padding:20px;
+  float:left;
+  width:70%;/*The width is 70%, by default*/
+  color: #341C09;
+  text-align: left;
+}
+
+.lefttop ul {
+	text-align: left;
+	list-style: none;
+}
+.lefttop li a {
+	color: #D4E4F7;
+	text-decoration: none;
+	font-size: 3vw;
+}
+.leftbottom {
+  background-color:#236AB9;
+  padding:20px;
+  float:left;
+  width:30%;/*The width is 30%, by default*/
+  color: #B85B14;
+}
+
+.rightbottom {
+  background-color:#B85B14;
+  padding:20px;
+  float:left;
+  width:50%;/*The width is 50%, by default*/
+  color: #236AB9;
+
+}
+/*Use a media query to add a break point at 800px:*/
+@media (max-width:800px) {
+  .lefttop, .righttop, .leftbottom, .rightbottom{
+    width:100%;/*The width is 100%, when the viewport is 800px or smaller*/
+  }
+}
+</style>
+</head>
+<body>
+
+	
+
+<div class="flex-container"> <!-- main container for the four boxes and footer-->
+<article><!-- left column-->
+	<div class="lefttop">
+  <h3>Menu</h3>
+  <p>
+  <ul>	
+	<li><a href="index.html" >Home </a></li>   
+  	<li><a href="music_performance.html">Music Performance</a></li>
+ 	 <li><a href="music_teaching.html">Music Teaching</a></li>
+ 	 <li><a href="reed_making.html">Reed Making</a></li>
+  	<li><a href="event_management.html">Event Management</a></li>
+</ul>
+</p>
+	</div>
+
+	<div class="leftbottom">
+   <h3>Upcoming Events</h3> 
+   <p>Here we add the upcoming concerts and events</p><br>
+	</div>
+</article>	
+
+
+<div>
+	
+	<div class="rightbottom">
+<h3>Contact Me</h3> 
+
+<!-- When submitting this form, the result will be stay on this page -->
+
+<form action="/action_page.php" target="_self">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+
+
+
+
+<form id='contactus' action='<?php echo $formproc->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<fieldset >
+<legend>Contact us</legend>
+
+<input type='hidden' name='submitted' id='submitted' value='1'/>
+<input type='hidden' name='<?php echo $formproc->GetFormIDInputName(); ?>' value='<?php echo $formproc->GetFormIDInputValue(); ?>'/>
+<input type='text'  class='spmhidip' name='<?php echo $formproc->GetSpamTrapInputName(); ?>' />
+
+<div class='short_explanation'>* required fields</div>
+
+<div><span class='error'><?php echo $formproc->GetErrorMessage(); ?></span></div>
+<div class='container'>
+    <label for='name' >Your Full Name*: </label><br/>
+    <input type='text' name='name' id='name' value='<?php echo $formproc->SafeDisplay('name') ?>' maxlength="50" /><br/>
+    <span id='contactus_name_errorloc' class='error'></span>
+</div>
+<div class='container'>
+    <label for='email' >Email Address*:</label><br/>
+    <input type='text' name='email' id='email' value='<?php echo $formproc->SafeDisplay('email') ?>' maxlength="50" /><br/>
+    <span id='contactus_email_errorloc' class='error'></span>
+</div>
+
+<div class='container'>
+    <label for='message' >Message:</label><br/>
+    <span id='contactus_message_errorloc' class='error'></span>
+    <textarea rows="10" cols="50" name='message' id='message'><?php echo $formproc->SafeDisplay('message') ?></textarea>
+</div>
+
+
+<div class='container'>
+    <input type='submit' name='Submit' value='Submit' />
+</div>
+
+</fieldset>
+</form>
+
+<script type='text/javascript'>
+// <![CDATA[
+
+    var frmvalidator  = new Validator("contactus");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+    frmvalidator.addValidation("name","req","Please provide your name");
+
+    frmvalidator.addValidation("email","req","Please provide your email address");
+
+    frmvalidator.addValidation("email","email","Please provide a valid email address");
+
+    frmvalidator.addValidation("message","maxlen=2048","The message is too long!(more than 2KB!)");
+
+// ]]>
+</script>
+	</div>	
+</div> <!-- /bottom row with two boxes -->
+-->
+
+
+<footer class="clearfix">Copyright &copy; 2018 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="about_contact.html">About</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="about_contact.html">Contact</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">LinkedIn</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Facebook</a></footer>
+</div> <!-- /main container for the four boxes -->
+</body>
+</html>
