@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Diaporama</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+
+
+<body style="font-family:Verdana;color:#190934; font-size: 3vw;background-color: #e9f1fb;" >
+<h2 class="w3-center"><a href="index.html"><i> Home</a></i>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Diaporama</span></h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="images/slideshow_eugenie_emma.jpg" style="width:100%">
+  <img class="mySlides" src="images/slideshow_eugenie_flute_piano.jpg" style="width:100%">
+  <img class="mySlides" src="images/slideshow_eugenie_singer.jpg" style="width:100%">
+   <img class="mySlides" src="images/slideshow_oboe_ensemble.jpg" style="width:100%">
+   <img class="mySlides" src="images/slideshow_oboe_trio.jpg" style="width:100%">
+   <img class="mySlides" src="images/slideshow_oboe_trio_2.png" style="width:100%">
+   <img class="mySlides" src="images/slideshow_master_david_walter.jpg" style="width:100%">
+   <img class="mySlides" src="images/slideshow_eugenie_pianist.jpg" style="width:100%">
+  <img class="mySlides" src="images/slideshow_eugenie_richard_land.jpg" style="width:100%">
+ <img class="mySlides" src="images/slideshow_vancouver_oboe.png" style="width:100%">
+
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>
